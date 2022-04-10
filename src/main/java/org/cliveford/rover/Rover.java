@@ -37,4 +37,8 @@ public class Rover {
     public String getDirection() {
         return roverDirection;
     }
+
+    public String moveRover(String inputMovement) {
+        return "I'm sleepy I'll move later :-)";
+    }
 }

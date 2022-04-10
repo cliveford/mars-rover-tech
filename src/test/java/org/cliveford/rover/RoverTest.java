@@ -25,4 +25,13 @@ public class RoverTest {
         assertEquals(yDropPointExpected, yCoordinate);
         assertEquals(facingExpected, direction);
     }
+
+    @Test
+    void checkInputMovesRoverAndReturnsNewCoordinates() {
+        Rover rover = new Rover("woof", "hover", 1, 2, "N");
+        String inputMovement = "LMLMLMLMM";
+        String expectedCoordinates = "1 3 N";
+        String newCoordinates = rover.moveRover(inputMovement);
+        assertEquals(expectedCoordinates, newCoordinates);
+    }
 }
