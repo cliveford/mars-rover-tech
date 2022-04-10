@@ -34,4 +34,13 @@ public class RoverTest {
         String newCoordinates = rover.moveRover(inputMovement);
         assertEquals(expectedCoordinates, newCoordinates);
     }
+
+    @Test
+    void checkInputMovesRoverAndReturnsCorrectCoordinates() {
+        Rover rover = new Rover("fido", "wheelie", 3, 3, "E");
+        String inputMovement = "MMRMMRMRRM";
+        String expectedCoordinates = "5 1 E";
+        String newCoordinates = rover.moveRover(inputMovement);
+        assertEquals(expectedCoordinates, newCoordinates);
+    }
 }

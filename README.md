@@ -9,4 +9,9 @@
 6. Commit.
 7. Create git tag.
 8. Create remote repo & push.  
-9. Push git tag to remote.
+9. Push git tag to remote.  
+
+## Improvements
+1. Create parameterised tests.  
+2. Check for obstacles when rovers move.  
+3. Refactor code.

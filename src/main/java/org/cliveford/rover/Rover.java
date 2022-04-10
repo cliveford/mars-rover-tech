@@ -39,6 +39,55 @@ public class Rover {
     }
 
     public String moveRover(String inputMovement) {
-        return "I'm sleepy I'll move later :-)";
+
+
+        for (int iLetter = 0; iLetter < inputMovement.length(); iLetter++) {
+            if (inputMovement.charAt(iLetter) == 'L') {
+                if (getDirection() == "N") {
+                    setDirection("W");
+                } else if (getDirection() == "W") {
+                    setDirection("S");
+                } else if (getDirection() == "S") {
+                    setDirection("E");
+                } else if (getDirection() == "E") {
+                    setDirection("N");
+                }
+            }
+            if (inputMovement.charAt(iLetter) == 'R') {
+                if (getDirection() == "N") {
+                    setDirection("E");
+                } else if (getDirection() == "W") {
+                    setDirection("N");
+                } else if (getDirection() == "S") {
+                    setDirection("W");
+                } else if (getDirection() == "E") {
+                    setDirection("S");
+                }
+            }
+            if (inputMovement.charAt(iLetter) == 'M') {
+                if (getDirection() == "N") setYCoordinate(1);
+                if (getDirection() == "E") setXCoordinate(1);
+                if (getDirection() == "S") setYCoordinate(-1);
+                if (getDirection() == "W") setXCoordinate(-1);
+            }
+        }
+        String newLocation = getXCoordinate() + " " + getYCoordinate() + " " + getDirection();
+        return newLocation;
+
+    }
+
+    private void setXCoordinate(int value) {
+        xCoordinate += value;
+        System.out.println("x : " + xCoordinate);
+    }
+
+    private void setYCoordinate(int value) {
+        yCoordinate += value;
+        System.out.println("y : " + yCoordinate);
+    }
+
+    private void setDirection(String direction) {
+        roverDirection = direction;
+        System.out.println("direction : " + roverDirection);
     }
 }
