@@ -9,12 +9,13 @@ public class PlateauTest {
     @Test
     void checkPlateauInitialisesInstanceWithCorrectParameters() {
         Plateau plateau = new Plateau(10, 10);
-        int xAxisResult = 10;
-        int yAxisResult = 10;
+        int xAxisExpected = 10;
+        int yAxisExpected = 10;
         int xAxis = plateau.getXAxis();
         int yAxis = plateau.getYAxis();
-        assertEquals(xAxisResult, xAxis);
-        assertEquals(yAxisResult, yAxis);
+        assertEquals(xAxisExpected, xAxis);
+        assertEquals(yAxisExpected, yAxis);
     }
+
 
 }
