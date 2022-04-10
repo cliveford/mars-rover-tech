@@ -8,4 +8,5 @@
 5. Initialise local repo.
 6. Commit.
 7. Create git tag.
-8. Create remote repo & push.
+8. Create remote repo & push.  
+9. Push git tag to remote.
