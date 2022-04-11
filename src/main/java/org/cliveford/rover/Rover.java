@@ -38,80 +38,59 @@ public class Rover {
         return roverDirection;
     }
 
-    public String moveRover(String inputMovement) {
-
-
-        for (int iLetter = 0; iLetter < inputMovement.length(); iLetter++) {
-            if (inputMovement.charAt(iLetter) == 'L') {
-                if (getDirection() == "N") {
-                    setDirection("W");
-                } else if (getDirection() == "W") {
-                    setDirection("S");
-                } else if (getDirection() == "S") {
-                    setDirection("E");
-                } else if (getDirection() == "E") {
-                    setDirection("N");
-                }
-            }
-            if (inputMovement.charAt(iLetter) == 'R') {
-                if (getDirection() == "N") {
-                    setDirection("E");
-                } else if (getDirection() == "W") {
-                    setDirection("N");
-                } else if (getDirection() == "S") {
-                    setDirection("W");
-                } else if (getDirection() == "E") {
-                    setDirection("S");
-                }
-            }
-            if (inputMovement.charAt(iLetter) == 'M') {
-                if (getDirection() == "N") {
-                    if (getYCoordinate() == 10) {
-                        return "Hey! You have reached the edge!!!";
-                    } else {
-                        setYCoordinate(1);
-                    }
-                }
-                if (getDirection() == "E") {
-                    if (getXCoordinate() == 10) {
-                        return "Hey! You have reached the edge!!!";
-                    } else {
-                        setXCoordinate(1);
-                    }
-                }
-                if (getDirection() == "S") {
-                    if (getYCoordinate() == 0) {
-                        return "Hey! You have reached the edge!!!";
-                    } else {
-                        setYCoordinate(-1);
-                    }
-                }
-                if (getDirection() == "W") {
-                    if (getXCoordinate() == 0) {
-                        return "Hey! You have reached the edge!!!";
-                    } else {
-                        setXCoordinate(-1);
-                    }
-                }
-            }
-        }
-        String newLocation = getXCoordinate() + " " + getYCoordinate() + " " + getDirection();
-        return newLocation;
-
-    }
-
     private void setXCoordinate(int value) {
         xCoordinate += value;
-        System.out.println("x : " + xCoordinate);
     }
 
     private void setYCoordinate(int value) {
         yCoordinate += value;
-        System.out.println("y : " + yCoordinate);
     }
 
     private void setDirection(String direction) {
         roverDirection = direction;
-        System.out.println("direction : " + roverDirection);
     }
+
+    public String moveRover(String inputMovement) {
+
+        for (int iLetter = 0; iLetter < inputMovement.length(); iLetter++) {
+            if (inputMovement.charAt(iLetter) == 'L') {
+                switch (getDirection()) {
+                    case "N" -> setDirection("W");
+                    case "W" -> setDirection("S");
+                    case "S" -> setDirection("E");
+                    case "E" -> setDirection("N");
+                }
+            }
+            if (inputMovement.charAt(iLetter) == 'R') {
+                switch (getDirection()) {
+                    case "N" -> setDirection("E");
+                    case "W" -> setDirection("N");
+                    case "S" -> setDirection("W");
+                    case "E" -> setDirection("S");
+                }
+            }
+            if (inputMovement.charAt(iLetter) == 'M') {
+                String message = "Hey! You have reached the edge!!!";
+                if (getDirection().equals("N")) {
+                    if (getYCoordinate() == 10) return message;
+                    else setYCoordinate(1);
+                }
+                if (getDirection().equals("E")) {
+                    if (getXCoordinate() == 10) return message;
+                    else setXCoordinate(1);
+                }
+                if (getDirection().equals("S")) {
+                    if (getYCoordinate() == 0) return message;
+                    else setYCoordinate(-1);
+                }
+                if (getDirection().equals("W")) {
+                    if (getXCoordinate() == 0) return message;
+                    else setXCoordinate(-1);
+                }
+            }
+        }
+        return getXCoordinate() + " " + getYCoordinate() + " " + getDirection();
+
+    }
+
 }
