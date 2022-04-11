@@ -65,10 +65,34 @@ public class Rover {
                 }
             }
             if (inputMovement.charAt(iLetter) == 'M') {
-                if (getDirection() == "N") setYCoordinate(1);
-                if (getDirection() == "E") setXCoordinate(1);
-                if (getDirection() == "S") setYCoordinate(-1);
-                if (getDirection() == "W") setXCoordinate(-1);
+                if (getDirection() == "N") {
+                    if (getYCoordinate() == 10) {
+                        return "Hey! You have reached the edge!!!";
+                    } else {
+                        setYCoordinate(1);
+                    }
+                }
+                if (getDirection() == "E") {
+                    if (getXCoordinate() == 10) {
+                        return "Hey! You have reached the edge!!!";
+                    } else {
+                        setXCoordinate(1);
+                    }
+                }
+                if (getDirection() == "S") {
+                    if (getYCoordinate() == 0) {
+                        return "Hey! You have reached the edge!!!";
+                    } else {
+                        setYCoordinate(-1);
+                    }
+                }
+                if (getDirection() == "W") {
+                    if (getXCoordinate() == 0) {
+                        return "Hey! You have reached the edge!!!";
+                    } else {
+                        setXCoordinate(-1);
+                    }
+                }
             }
         }
         String newLocation = getXCoordinate() + " " + getYCoordinate() + " " + getDirection();
