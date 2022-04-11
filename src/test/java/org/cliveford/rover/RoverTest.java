@@ -43,4 +43,13 @@ public class RoverTest {
         String newCoordinates = rover.moveRover(inputMovement);
         assertEquals(expectedCoordinates, newCoordinates);
     }
+
+    @Test
+    void checkRoverCannotMoveBeyondBoundary() {
+        Rover rover = new Rover("fido", "wheelie", 0, 0, "N");
+        String inputMovement = "MMMMMMMMMMMMMMM";
+        String expectedMessage = "Hey! You have reached the edge!!!";
+        String actualMessage = rover.moveRover(inputMovement);
+        assertEquals(expectedMessage, actualMessage);
+    }
 }

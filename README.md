@@ -13,5 +13,7 @@
 
 ## Improvements
 1. Create parameterised tests.  
-2. Check for obstacles when rovers move.  
-3. Refactor code.
+2. Check for plateau boundaries. 
+3. Create user input - console initially.
+4. Check for obstacles when rovers move.  
+5. Refactor code.  
