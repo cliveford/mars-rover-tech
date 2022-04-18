@@ -68,7 +68,7 @@ My second approach worked out much better.
 However, I ran into some problems when trying to maintain state with only my Rover and Plateau classes.  
 I created a Houston class to enable maintaining state.  
 I am unsure whether it's ok to use my Houston class the way that I'm using it ??? - question:  
-1. Is it ok to have a class that doesn't instantiate any objects but isn't abstract?  
+**Is it ok to have a class that doesn't instantiate any objects but isn't abstract?**  
 I decided to use nested hashmaps to maintain state, it took me a considerable amount of time to get them working in a for each loop.  
 I hate nested hashmaps :-)  
 I became so distracted by hashmaps and state that my regular commits became non-existent.  
