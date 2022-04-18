@@ -59,17 +59,17 @@ MMRMMRMRRM
 2. I changed this in an attempt to prevent error, improve error handling, and to make the input more intuitive.  
 ---
 ## Approach and thought processes:  
-### First approach:
+### First approach:  
 In my first approach I attempted to follow TDD to the letter.   
 This led to creating methods that became redundant when I implemented user interaction via the console.  
 I also realised that I had gone off track, so I sketched out some user flow diagrams.  
 This led me to deciding to scrap my initial approach and start afresh.  
-### Second approach:
+### Second approach:  
 My second approach worked out much better.  
 However, I ran into some problems when trying to maintain state with only my Rover and Plateau classes.  
 I created a Houston class to enable maintaining state.  
 I am unsure whether it's ok to use my Houston class the way that I'm using it ??? - question:  
-Is it ok to have a class that doesn't instantiate any objects but isn't abstract?  
+**Is it ok to have a class that doesn't instantiate any objects but isn't abstract?**  
 I decided to use nested hashmaps to maintain state, it took me a considerable amount of time to get them working in a for each loop.  
 I hate nested hashmaps :-)  
 I became so distracted by hashmaps and state that my regular commits became non-existent.  
@@ -81,8 +81,8 @@ Added finals and changed some access modifiers.
 Created UML class diagram.  
 Final commit and push :-)  
 To run the programme - Run `App.main()`  
----
 
+---
 ## Tech used:  
 IntelliJ IDEA(community edition), Java(17.0.2), Maven(3.8.4), junit(5.8.2)  
 
