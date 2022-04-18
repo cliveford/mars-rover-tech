@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam classAttributeIconSize 0
+
+Rover *-- Houston
+Plateau *-- Houston
+Plateau o-- Rover
+
+class Rover {
+-ROVERNAME: string
+-ROVERTYPE: string
+-XCOORDINATE: int
+-YCOORDINATE: int
+-ROVERDIRECTION: string
++getName(): string
++getType(): string
++getXCoordinate(): int
++getYCoordinate(): int
++getDirection(): string
+}
+
+class Plateau {
+-PLATEAUNAME: string
+-XAXIS: int
+-YAXIS: int
++getPlateauName(): string
++getXAxis(): int
++getYAxis(): int
+}
+
+class Houston {
+-getPlateauMap(): map
+-getRoverMap(): map
++addPlateauToPlateausMap(): void
++addRoverToRoversMap(): void
+-collisionDetection(): boolean
++updateRoverPosition(): string
+}
+
+
+
+@enduml

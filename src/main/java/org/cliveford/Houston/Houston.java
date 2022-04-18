@@ -8,16 +8,16 @@ import java.util.Map;
 
 public class Houston {
 
-    static Map<String, Map<String, Integer>> plateaus = new HashMap<>();
-    static Map<String, Map<String, Object>> rovers = new HashMap<>();
+    private static final Map<String, Map<String, Integer>> PLATEAUS = new HashMap<>();
+    private static final Map<String, Map<String, Object>> ROVERS = new HashMap<>();
 
 
     private static Map<String, Integer> getPlateauMap(String name) {
-        return plateaus.get(name);
+        return PLATEAUS.get(name);
     }
 
     private static Map<String, Object> getRoverMap(String name) {
-        return rovers.get(name);
+        return ROVERS.get(name);
     }
 
     public static void addPlateauToPlateausMap(Plateau plateau) {
@@ -26,8 +26,7 @@ public class Houston {
         Map<String, Integer> map = new HashMap<>();
         map.put(xAxisBoundary, plateau.getXAxis());
         map.put(yAxisBoundary, plateau.getYAxis());
-        plateaus.put(plateau.getPlateauName(), map);
-
+        PLATEAUS.put(plateau.getPlateauName(), map);
     }
 
     public static void addRoverToRoversMap(Rover rover) {
@@ -40,10 +39,10 @@ public class Houston {
         map.put(xAxis, rover.getXCoordinate());
         map.put(yAxis, rover.getYCoordinate());
         map.put(direction, rover.getDirection());
-        rovers.put(rover.getName(), map);
+        ROVERS.put(rover.getName(), map);
     }
 
-    public static boolean collisionDetection(String axis, String currentRover) {
+    private static boolean collisionDetection(String axis, String currentRover) {
         Map<String, Object> roverMap = getRoverMap(currentRover);
 
         int otherAxisValue = 0;
@@ -54,7 +53,7 @@ public class Houston {
         else otherAxis = "xAxis";
 
         // loop through all rover positions to check for potential collisions
-        for (var otherRovers : rovers.entrySet()) {
+        for (var otherRovers : ROVERS.entrySet()) {
             // exclude checking rover position for current rover
             if (!otherRovers.getKey().equals(currentRover)) {
                 // need to check where other rovers are on plateau

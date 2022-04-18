@@ -3,22 +3,23 @@ package org.cliveford.plateau;
 
 public class Plateau {
 
-    String plateauName;
-    int xAxis;
-    int yAxis;
+    private final String PLATEAUNAME;
+    private final int XAXIS;
+    private final int YAXIS;
 
     public Plateau(String name, int xAxisMax, int yAxisMax) {
-        plateauName = name;
-        xAxis = xAxisMax;
-        yAxis = yAxisMax;
+        PLATEAUNAME = name;
+        XAXIS = xAxisMax;
+        YAXIS = yAxisMax;
 
     }
+
+    public String getPlateauName() { return PLATEAUNAME; }
 
     public int getXAxis() {
-        return xAxis;
+        return XAXIS;
     }
 
-    public int getYAxis() { return yAxis; }
+    public int getYAxis() { return YAXIS; }
 
-    public String getPlateauName() { return plateauName; }
 }

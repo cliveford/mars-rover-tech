@@ -2,41 +2,41 @@ package org.cliveford.rover;
 
 public class Rover {
 
-    String roverName;
-    String roverType;
-    int xCoordinate;
-    int yCoordinate;
-    String roverDirection;
+    private final String ROVERNAME;
+    private final String ROVERTYPE;
+    private final int XCOORDINATE;
+    private final int YCOORDINATE;
+    private final String ROVERDIRECTION;
 
     public Rover(String name, String type, int xAxis, int yAxis, String direction) {
 
-        roverName = name;
-        roverType = type;
-        xCoordinate = xAxis;
-        yCoordinate = yAxis;
-        roverDirection = direction;
+        ROVERNAME = name;
+        ROVERTYPE = type;
+        XCOORDINATE = xAxis;
+        YCOORDINATE = yAxis;
+        ROVERDIRECTION = direction;
 
     }
 
 
     public String getName() {
-        return roverName;
+        return ROVERNAME;
     }
 
     public String getType() {
-        return roverType;
+        return ROVERTYPE;
     }
 
     public int getXCoordinate() {
-        return xCoordinate;
+        return XCOORDINATE;
     }
 
     public int getYCoordinate() {
-        return yCoordinate;
+        return YCOORDINATE;
     }
 
     public String getDirection() {
-        return roverDirection;
+        return ROVERDIRECTION;
     }
 
 
