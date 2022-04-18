@@ -1,13 +1,14 @@
 package org.cliveford.plateau;
 
+
 public class Plateau {
 
+    String plateauName;
     int xAxis;
     int yAxis;
 
-
-    public Plateau(int xAxisMax, int yAxisMax) {
-
+    public Plateau(String name, int xAxisMax, int yAxisMax) {
+        plateauName = name;
         xAxis = xAxisMax;
         yAxis = yAxisMax;
 
@@ -17,7 +18,7 @@ public class Plateau {
         return xAxis;
     }
 
-    public int getYAxis() {
-        return yAxis;
-    }
+    public int getYAxis() { return yAxis; }
+
+    public String getPlateauName() { return plateauName; }
 }
