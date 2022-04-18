@@ -59,11 +59,12 @@ MMRMMRMRRM
 2. I changed this in an attempt to prevent error, improve error handling, and to make the input more intuitive.  
 ---
 ## Approach and thought processes:  
+### First approach:
 In my first approach I attempted to follow TDD to the letter.   
 This led to creating methods that became redundant when I implemented user interaction via the console.  
 I also realised that I had gone off track, so I sketched out some user flow diagrams.  
 This led me to deciding to scrap my initial approach and start afresh.  
-
+### Second approach:
 My second approach worked out much better.  
 However, I ran into some problems when trying to maintain state with only my Rover and Plateau classes.  
 I created a Houston class to enable maintaining state.  
